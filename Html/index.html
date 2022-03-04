@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 行内 */
+            #parent {
+                background-color: rgb(167, 23, 23);
+                height: 200px;
+                text-align: center; /* 行内水平居中 */
+                line-height: 200px; /* 行内垂直居中 */
+            }
+            #child {
+                background-color: rgb(209, 167, 167);
+            }
+            /* 块级 */
+            #parent2 {
+                background-color: rgb(84, 161, 192);
+                height: 200px;
+            }
+            #parent2 > p {
+                background-color: rgb(184, 247, 243);
+                text-align: center;
+                width: 100px;
+                margin: 0 auto;
+            }
+            /* 图片 */
+            #parent3 {
+                background-color: rgb(223, 153, 153);
+                text-align: center;
+                height: 300px;
+                line-height: 300px;
+                font-size: 0;
+            }
+            #parent3 > img {
+                vertical-align: middle;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="parent">
+            <span id="child">一个行内</span>
+        </div>
+        <div id="parent2">
+            <p>一个块</p>
+        </div>
+        <div id="parent3">
+            <img src="/daika.png" alt="" width="200px" />
+            <img src="/daika.png" alt="" width="200px" />
+        </div>
+        <script>
+            // 3. 第三个问题
+            console.log(1);
+            document.onclick = function () {
+                console.log("click");
+            };
+            console.log(2);
+            setTimeout(function () {
+                console.log(3);
+            }, 3000);
+        </script>
+    </body>
+</html>

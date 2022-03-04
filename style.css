@@ -1,0 +1,73 @@
+#TryP{color: blue;text-align: left;}
+a:link{color: aqua;}
+a:active{color: blueviolet;}
+ul{list-style-type: none;}
+li{display: inline;}
+/* li{float: left;padding-left: 200px;} */
+div{margin: 20px;}
+/* background-color: rgb(247, 237, 226); */
+#father{
+    background-color: black;
+}
+#father>div:first-child{
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    float: left;
+}
+#father>div:nth-child(2){
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 174, 255);
+    float: left;
+}
+#father>div:nth-child(3){
+    margin: 0;
+    height: 50px;
+    background-color: rgb(0, 89, 255);
+    overflow: hidden;
+}
+#container{
+    display: flex;
+    background-color: rgb(255, 161, 55);
+    justify-content: space-evenly;
+}
+.item{
+    margin: 10px;
+    background-color: rgb(252, 245, 153);
+    width: 200px;
+    height: 50px;
+    /* flex-grow: 1; */
+}
+#container>div:nth-child(3){
+    flex: 1; 
+}
+#pFather{
+    position: relative;
+    background-color: rgb(189, 105, 122);
+}
+#pFather>div:first-child{
+    margin: 0;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(243, 208, 224);
+}
+#pFather>div:last-child{
+    margin: 0;
+    height: 50px;
+    background-color: rgb(247, 150, 174);
+}
+#pFather::after{
+    content:"伪元素" ;
+}
+.begin{
+    background-color: #fff;
+    color: black;
+}
+.change{
+    background-color: rgb(112, 48, 48);
+    color: rgb(221, 207, 207);
+}

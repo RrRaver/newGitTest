@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- 段落+链接+图片 -->
+        <div>
+            <h1>我的第一个试验品</h1>
+            <hr />
+            <p id="TryP">
+                <b>p0</b><br />
+                <strong>p1</strong><br />
+                <i>p2</i><br />
+                <em>p3</em><br />
+                p<sub>4</sub><br />
+                p<sup>5</sup><br />
+                <!-- target：链接在何处显示，"_blank"：新窗口打开，"_top"：页面顶部 -->
+                <a href="https://www.baidu.com/" target="_blank"
+                    >访问百度
+                    <!-- 图片链接 -->
+                    <img src="" alt="picture" title="注释内容" />
+                </a>
+            </p>
+        </div>
+        <!-- 按钮 -->
+        <div>
+            <button type="button" onclick="myFunction()">click</button>
+        </div>
+        <!-- 列表 -->
+        <div style="background-color: rgb(197, 255, 236)">
+            <ul>
+                <li>ul 列表的第一行文字</li>
+                <li>ul 列表的第二行文字</li>
+            </ul>
+        </div>
+        <div style="background-color: rgb(214, 252, 255)">
+            <dl>
+                <dt>项目 1</dt>
+                <dd>描述项目 1</dd>
+                <dt>项目 2</dt>
+                <dd>描述项目 2</dd>
+            </dl>
+        </div>
+        <!-- 表格 -->
+        <div>
+            <table border="2px">
+                <tr>
+                    <th>Name</th>
+                    <th colspan="2">sex</th>
+                </tr>
+                <tr>
+                    <td>byq</td>
+                    <td>nan</td>
+                    <td>nv</td>
+                </tr>
+            </table>
+        </div>
+        <!-- 表单 -->
+        <div>
+            <form action="demo_form.php" method="post/get">
+                邮箱：<input
+                    type="text"
+                    name="email"
+                    size="40"
+                    maxlength="50"
+                /><br />
+                密码：<input type="password" /><br />
+                复选框 checkbox：<input
+                    type="checkbox"
+                    checked="checked"
+                /><br />
+                单选框 radio：<input type="radio" checked="checked" /><br />
+                提交 submit：<input type="submit" value="Send" /><br />
+                重置 reset：<input type="reset" /><br />
+                隐藏 hidden：<input type="hidden" /><br />
+                选择 select：<select>
+                    <option>苹果</option>
+                    <option selected="selected">香蕉</option>
+                    <option>樱桃</option></select
+                ><br />
+                多行文本 textarea：<textarea
+                    name="comment"
+                    rows="10"
+                    cols="20"
+                ></textarea>
+            </form>
+        </div>
+        <!-- 框架 -->
+        <div>
+            <iframe src="" frameborder="1px" name="ifram_a"></iframe><br />
+            <a href="https://www.runoob.com" target="ifram_a">点击变化iframe</a>
+        </div>
+        <!-- 浮动 -->
+        <div id="father">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!-- flex -->
+        <div id="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <!-- position -->
+        <div id="pFather">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="begin">文本</div>
+        <script>
+            var ele = document.querySelector(".begin");
+            ele.onclick = function () {
+                ele.className = "change";
+            };
+
+            function myFunction() {
+                document.getElementById("TryP").innerHTML =
+                    "第一个修改的innerHtml";
+                var tryp = document.getElementById("TryP");
+                console.log(tryp);
+                console.dir(tryp);
+            }
+            var a = Object.prototype.toString;
+            console.log(a.call([]));
+
+            var obj = {
+                1: "world",
+                2: "hi",
+            };
+
+            obj.p1 = 3;
+            console.log(obj);
+            var fn = function () {
+                console.log(1);
+            };
+            fn();
+
+            var myMath = {
+                PI: 3.141592653,
+                max: function () {
+                    //求数组最大值，arguments接收实参，存成数组
+                    var max = arguments[0];
+                    for (var i = 1; i < arguments.length; i++) {
+                        if (max < arguments[i]) {
+                            max = arguments[i];
+                        }
+                    }
+                    return max;
+                },
+            };
+            console.log(myMath.PI);
+            var arr = [1, 6, 3, 4, 5];
+            console.log(myMath.max(1, 6, 3, 4, 5));
+
+            function Star(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            var byq = new Star("byq", "22");
+        </script>
+    </body>
+</html>

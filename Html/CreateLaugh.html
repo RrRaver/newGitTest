@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            height: auto;
+            width: 400px;
+            padding: 20px;
+            border: 1px black solid;
+        }
+        div{
+            margin: 5%;
+        }
+        span{
+            font-size: 18px;
+        }
+        input{
+            font-size: 18px;
+        }
+        #text{
+            background-color: rgb(255, 147, 59);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <span><b>请输入自定义名字：</b></span>
+            <form action="" style="display: inline;">
+                <input type="text" placeholder="李雷" size="15" id="name">
+            </form>
+        </div>
+        <div>
+            <form action="">
+                <input type="radio" name="wendu" value="公制" checked>公制
+                <input type="radio" name="wendu" value="美制" >美制
+            </form>
+        </div>
+        <div>
+            <button onclick="CreateLaugh()">随机生成笑话</button>
+        </div>
+        <div id="text"></div>
+    </div>
+
+    <script>
+        function CreateLaugh(){
+            var name = document.getElementById('name').value;
+            var radio = document.getElementsByName('wendu');
+            for(var i=0 ; i < radio.length ; i++){
+                if(radio[i].checked){
+                    var wendu=radio[i].value;
+                }
+            }
+            if(wendu == '公制'){
+                var du = '30度';
+            }else{
+                var du = '67华氏度';
+            }
+            document.getElementById('text').innerHTML='我叫'+ name +',今天好热，温度是' + du;
+
+        }
+    </script>
+</body>
+</html>

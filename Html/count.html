@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 计算数组的数字和
+      var arr1 = [1, 2, 3, 4, 5, 6, "hh", 7, 8, 9];
+      var sum = 0;
+      for (var i in arr1) {
+        if (typeof arr1[i] == "number") {
+          sum += arr1[i];
+          console.log(sum);
+        }
+      }
+      document.write(sum);
+      // 去掉数组内的重复内容
+      var arr = [1, 2, 3, 4, 5, 1, 2, 3];
+      var newArr = [];
+      newArr[0] = arr[0];
+      for (var i = 1; i < arr.length; i++) {
+        for (var j = 0; j < newArr.length; j++) {
+          if (newArr[j] == arr[i]) {
+            break;
+          }
+        }
+        if (j == newArr.length) {
+          newArr.length += 1;
+          newArr[j] = arr[i];
+        }
+      }
+    </script>
+  </body>
+</html>
